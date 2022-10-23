@@ -122,9 +122,8 @@ body {
     position: relative;
     height: 100%;
     width: 100%;
-    box-shadow: rgba(25, 24, 24, 0.2) 5px 5px 10px 0px, rgba(25, 24, 24, 0.4) 10px 10px 10px 0px,
-      rgba(25, 24, 24, 0.604) 15px 15px 1px 0px;
-    // filter: drop-shadow(0 20px 30px rgba(220, 20, 60, 0.199));
+    box-shadow: rgba(25, 24, 24, 0.2) 5px 5px 20px 0px, rgba(25, 24, 24, 0.4) 10px 10px 20px 0px,
+      rgba(25, 24, 24, 0.604) 15px 15px 10px 0px;
     @include breakpoint(large) {
       height: 85%;
       width: 65%;
