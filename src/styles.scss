@@ -53,33 +53,38 @@ body {
 
     .titleWrapper {
       position: relative;
+      font-family: "Roboto Condensed", sans-serif;
+
+      .overlay {
+        z-index: 5;
+        position: absolute;
+        font-size: 5em;
+        // background-image: src(
+        //   "https://t3.ftcdn.net/jpg/02/98/10/14/360_F_298101413_P0irRtbi9Qr084cQb0YgSmisY7cI5IPL.jpg"
+        // );
+        // clip-path: text;
+        // -webkit-text-fill-color: transparent;
+        color: transparent;
+        background-size: 100%;
+        background: url("https://t3.ftcdn.net/jpg/01/24/17/42/240_F_124174200_aC64Gl0Njz75sgGuotbFaZgQLliv3V1T.jpg")
+          90% -10% no-repeat;
+        background-clip: text;
+        mix-blend-mode: multiply;
+        opacity: 0.45;
+      }
 
       .appTitle {
         position: relative;
         z-index: 2;
         font-size: 5em;
-        font-family: "Roboto Condensed", sans-serif;
         color: rgb(123, 12, 12);
-        transform: skew(5deg);
         background-image: linear-gradient(to right, $fireRed, #dc5912, $fireRed);
         background-size: 200% auto;
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        animation: shine 10s linear infinite;
-        // filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.664));
-
-        @keyframes shine {
-          0% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-          100% {
-            background-position: 0% 50%;
-          }
-        }
+        animation: shine 8s linear infinite;
+        filter: drop-shadow(-2mm 0mm 1px black);
       }
 
       .shadow {
@@ -89,34 +94,9 @@ body {
         top: 0px;
         left: -55px;
         font-size: 5em;
-        font-family: "Roboto Condensed", sans-serif;
         transform: skewX(60deg);
         filter: blur(3px);
         animation: shadowMove 3s infinite;
-      }
-
-      @keyframes shadowMove {
-        0% {
-          filter: blur(3px);
-        }
-
-        50% {
-          filter: blur(5px);
-        }
-        100% {
-          filter: blur(3px);
-        }
-      }
-
-      .behind {
-        z-index: 1;
-        position: absolute;
-        color: rgba(0, 0, 0, 0.9);
-        top: -2px;
-        left: -4px;
-        font-size: 5em;
-        transform: skew(5deg);
-        font-family: "Roboto Condensed", sans-serif;
       }
     }
 
@@ -280,5 +260,30 @@ body {
         }
       }
     }
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes shadowMove {
+  0% {
+    filter: blur(3px);
+  }
+
+  50% {
+    filter: blur(5px);
+  }
+  100% {
+    filter: blur(3px);
   }
 }
