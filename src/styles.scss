@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Poppins:wght@300;400;500&family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@100;300;400;500&display=swap");
 
+$grayBase: rgb(35, 34, 37);
+$grayLight: rgb(40, 39, 43);
+$slate: rgb(230, 221, 221);
+
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +18,7 @@ body {
 .appContainer {
   width: 100vw;
   height: 100vh;
-  background: rgb(35, 34, 37);
+  background: $grayBase;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,7 +55,18 @@ body {
   }
 
   .homeWrapper {
-    border: 2px solid yellow;
-  }
+    border: 2px solid $slate;
+    display: flex;
+    height: 80%;
+    width: 65%;
+    background-color: $grayLight;
 
+    .sidebar {
+      flex: 1;
+    }
+
+    .chat {
+      flex: 2;
+    }
+  }
 }
