@@ -188,7 +188,7 @@ body {
           border: none;
           padding: 1em;
           color: $slate;
-          background-color: $grayLight;
+          background-color: rgba(27, 27, 27, 0.689);
           // font-family: "Roboto Condensed", "Sans";
 
           &:focus {
@@ -211,7 +211,7 @@ body {
       .chatHeader {
         padding: 1em;
         text-align: center;
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px;
+        // box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px;
 
         // border-bottom: 2px solid $slate;
       }
@@ -244,6 +244,7 @@ body {
         overflow: scroll;
         font-size: 0.8em;
         padding: 1em;
+        box-shadow: rgba(0, 0, 0, 0.527) 0px 2px 30px -10px inset;
       }
 
       .message {
@@ -251,7 +252,7 @@ body {
         align-items: flex-end;
         gap: 0.5em;
         padding: 0.5em 0;
-        max-width: 70%;
+        max-width: 90%;
 
         img {
           width: 40px;
