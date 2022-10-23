@@ -1,8 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Poppins:wght@300;400;500&family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@100;300;400;500&display=swap");
 
+$breakpoints: (
+  small: 480px,
+  medium: 720px,
+  large: 960px,
+  wide: 1200px,
+);
+@mixin breakpoint($name) {
+  @if not map-has-key($breakpoints, $name) {
+    @warn "Invalid breakpoint `#{$name}`.";
+  } @else {
+    @media (min-width: map-get($breakpoints, $name)) {
+      @content;
+    }
+  }
+}
+
 $grayBase: rgb(35, 34, 37);
 $grayLight: rgb(40, 39, 43);
 $slate: rgb(230, 221, 221);
+$fireRed: rgb(105, 12, 12);
 
 * {
   margin: 0;
@@ -55,18 +72,150 @@ body {
   }
 
   .homeWrapper {
-    border: 2px solid $slate;
+    // border: 2px solid $slate;
     display: flex;
-    height: 80%;
-    width: 65%;
     background-color: $grayLight;
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    @include breakpoint(large) {
+      height: 85%;
+      width: 65%;
+    }
+
+    .active {
+    }
 
     .sidebar {
       flex: 1;
+      // border-right: 2px solid $slate;
+      // position: absolute;
+      // top: 0;
+      // left: 0;
+      // height: 100%;
+      // background: black;
+
+      // @include breakpoint(large) {
+      //   position: static;
+      // }
+
+      .sidebarNav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 1em;
+        // border-bottom: 2px solid $slate;
+        font-size: 0.8em;
+
+        .sidebarNavLogo {
+          display: flex;
+          align-content: center;
+
+          .fireLogo {
+            width: 30px;
+            height: 30px;
+            fill: $fireRed;
+            filter: drop-shadow(0 0px 5px rgba(0, 0, 0, 0.664));
+          }
+        }
+      }
+
+      .sidebarNavRight {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+      }
+
+      img {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+      }
+
+      .sidebarChats {
+        padding: 0;
+
+        input {
+          width: 100%;
+          border: none;
+          padding: 1em;
+          color: $slate;
+          background-color: $grayLight;
+          // font-family: "Roboto Condensed", "Sans";
+
+          &:focus {
+            outline: none;
+          }
+        }
+        ::placeholder {
+          color: $slate;
+          opacity: 0.8;
+          font-weight: bold;
+        }
+      }
     }
 
     .chat {
       flex: 2;
+      display: flex;
+      flex-direction: column;
+
+      .chatHeader {
+        padding: 1em;
+        text-align: center;
+
+        // border-bottom: 2px solid $slate;
+      }
+
+      .messageInput {
+        background-color: white;
+        color: black;
+        display: flex;
+
+        input {
+          height: 100%;
+          width: 100%;
+          outline: none;
+          border: none;
+        }
+
+        .sendBtn {
+          border: none;
+          background-color: firebrick;
+          padding: 1em;
+        }
+      }
+
+      .convo {
+        height: 100%;
+        overflow: scroll;
+        font-size: 0.8em;
+        padding: 1em;
+      }
+
+      .message {
+        display: flex;
+        align-items: flex-end;
+        gap: 0.5em;
+        padding: 0.5em 0;
+        max-width: 70%;
+
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+        }
+
+        .speechBubble {
+          border: 2px solid $slate;
+          background-color: white;
+          color: black;
+          padding: 1em;
+          border-radius: 30px 30px 30px 0px;
+        }
+      }
     }
   }
 }

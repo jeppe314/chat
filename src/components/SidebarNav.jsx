@@ -1,10 +1,13 @@
 import React from "react"
+import { ImFire } from "react-icons/im"
 
 export const SidebarNav = () => {
   return (
     <div className="sidebarNav">
       <div className="sidebarNavLogo">
-        <p>Logo</p>
+        <ImFire className="fireLogo" 
+        
+        />
       </div>
       <div className="sidebarNavRight">
         <img
