@@ -10,8 +10,6 @@ export const RegisterForm = () => {
   const [err, setErr] = useState(false)
   const navigate = useNavigate()
 
-  const storageRef = ref(storage)
-
   const handleSubmit = async (e) => {
     e.preventDefault()
 
@@ -19,6 +17,8 @@ export const RegisterForm = () => {
     const email = e.target[1].value
     const password = e.target[2].value
     const file = e.target[3].files[0]
+
+    console.log(e)
 
     try {
       // 1. Creates user
@@ -31,6 +31,7 @@ export const RegisterForm = () => {
       // 3. Upload image to cloud and get the images download url to use
       await uploadBytesResumable(storageRef, file).then(() => {
         getDownloadURL(storageRef).then(async (downloadURL) => {
+          console.log("HIT KOM VI IAF")
           try {
             // 4. Updates profile
             await updateProfile(res.user, {
@@ -38,7 +39,7 @@ export const RegisterForm = () => {
               photoURL: downloadURL,
             })
 
-            // 5. Creates registered user on firestore (database)
+            // 5. Creates registered user on firestore (database) doesnt work
             await setDoc(doc(db, "users", res.user.uid), {
               uid: res.user.uid,
               displayName,
@@ -50,14 +51,9 @@ export const RegisterForm = () => {
           }
         })
       })
-
-      // const docRes = await setDoc(doc(db, "users", res.user.uid), {
-      //   uid: res.user.uid,
-      //   displayName,
-      //   email,
-      // })
     } catch (err) {
       setErr(true)
+      console.log("Error in registration")
     }
     navigate("/")
   }
@@ -76,7 +72,7 @@ export const RegisterForm = () => {
       />
       <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "1em" }}>
         <span>Choose avatar</span>
-        <label for="fileBtn">
+        <label htmlFor="fileBtn">
           <MdFace />
         </label>
         <input required type="file" id="fileBtn" hidden></input>
