@@ -4,6 +4,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth"
 import { auth, db, storage } from "../firebase"
 import { doc, setDoc } from "firebase/firestore"
 import { ref } from "firebase/storage"
+import { MdFace } from "react-icons/md"
 
 export const RegisterForm = () => {
   const [err, setErr] = useState(false)
@@ -33,6 +34,10 @@ export const RegisterForm = () => {
 
   return (
     <form className="form" onSubmit={handleSubmit}>
+      <label for="fileBtn">
+        <MdFace />
+      </label>
+      <input required type="file" id="fileBtn" hidden></input>
       <input requiredtype="text" className="username" placeholder="Username" />
       <input required type="text" className="email" placeholder="Email" />
       <input
@@ -43,6 +48,7 @@ export const RegisterForm = () => {
         className="password"
         placeholder="Password"
       />
+
       <button className="btn registerBtn">Sign up</button>
       {err && <p>Something went wrong</p>}
       <Link to="/login">Already signed up?</Link>

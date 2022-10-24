@@ -36,7 +36,3 @@ export const LoginForm = () => {
     </div>
   )
 }
-
-// ;<Link to="/register">Register</Link>
-// {
-// }
