@@ -18,7 +18,7 @@ export const RegisterForm = () => {
     try {
       const res = await createUserWithEmailAndPassword(auth, email, password)
       navigate("/")
-    } catch {
+    } catch (err) {
       setErr(true)
     }
   }
