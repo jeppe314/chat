@@ -3,4 +3,4 @@ Add Fire logo next to title
 
 Make responsive (hamburger menu for tablet and smaller)
 
-Add loading screen after login / register
+Add loading screen after login / register (chat renders before img has loaded, i.e.)
