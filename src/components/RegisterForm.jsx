@@ -45,6 +45,10 @@ export const RegisterForm = () => {
               email,
               photoURL: downloadURL,
             })
+
+            // 6. Creates empty userChats in database
+
+            await setDoc(doc(db, "userChats", res.user.uid), {})
           } catch (err) {
             setErr(true)
           }
