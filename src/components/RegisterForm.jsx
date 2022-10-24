@@ -31,7 +31,6 @@ export const RegisterForm = () => {
       // 3. Upload image to cloud and get the images download url to use
       await uploadBytesResumable(storageRef, file).then(() => {
         getDownloadURL(storageRef).then(async (downloadURL) => {
-          console.log("HIT KOM VI IAF")
           try {
             // 4. Updates profile
             await updateProfile(res.user, {
