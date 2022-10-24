@@ -1,12 +1,15 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { createUserWithEmailAndPassword } from "firebase/auth"
-import { auth } from "../firebase"
+import { auth, db, storage } from "../firebase"
+import { doc, setDoc } from "firebase/firestore"
+import { ref } from "firebase/storage"
 
 export const RegisterForm = () => {
   const [err, setErr] = useState(false)
-
   const navigate = useNavigate()
+
+  const storageRef = ref(storage)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -17,6 +20,11 @@ export const RegisterForm = () => {
 
     try {
       const res = await createUserWithEmailAndPassword(auth, email, password)
+      // const docRes = await setDoc(doc(db, "users", res.user.uid), {
+      //   uid: res.user.uid,
+      //   displayName,
+      //   email,
+      // })
     } catch (err) {
       setErr(true)
     }
@@ -25,9 +33,10 @@ export const RegisterForm = () => {
 
   return (
     <form className="form" onSubmit={handleSubmit}>
-      <input type="text" className="username" placeholder="Username" />
-      <input type="text" className="email" placeholder="Email" />
+      <input requiredtype="text" className="username" placeholder="Username" />
+      <input required type="text" className="email" placeholder="Email" />
       <input
+        required
         type="password"
         pattern=".{8,}"
         title="Password needs to be minumum 8 characters long"

@@ -9,11 +9,13 @@ export const LoginForm = () => {
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
+    e.preventDefault()
+
     const email = e.target[0].value
     const password = e.target[1].value
 
     try {
-      signInWithEmailAndPassword(auth, email, password)
+      await signInWithEmailAndPassword(auth, email, password)
     } catch (err) {
       setErr(true)
     }
@@ -23,8 +25,8 @@ export const LoginForm = () => {
   return (
     <div>
       <form className="form" onSubmit={handleSubmit}>
-        <input type="email" className="email" placeholder="Email" />
-        <input type="password" className="password" placeholder="Password" />
+        <input required type="email" className="email" placeholder="Email" />
+        <input required type="password" className="password" placeholder="Password" />
         <button type="submit" className="btn login">
           Sign in
         </button>
