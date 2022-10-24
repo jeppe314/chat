@@ -1,13 +1,13 @@
 import React from "react"
 import { ImFire } from "react-icons/im"
+import { signOut } from "firebase/auth"
+import { auth } from "../firebase"
 
 export const SidebarNav = () => {
   return (
     <div className="sidebarNav">
       <div className="sidebarNavLogo">
-        <ImFire className="fireLogo" 
-        
-        />
+        <ImFire className="fireLogo" />
       </div>
       <div className="sidebarNavRight">
         <img
@@ -15,7 +15,7 @@ export const SidebarNav = () => {
           alt=""
         />
         <span>Jesper</span>
-        <p>Logout</p>
+        <button onClick={() => signOut(auth)}>Logout</button>
       </div>
     </div>
   )
