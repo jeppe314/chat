@@ -14,10 +14,10 @@ export const LoginForm = () => {
 
     try {
       signInWithEmailAndPassword(auth, email, password)
-      navigate("/")
     } catch (err) {
       setErr(true)
     }
+    navigate("/")
   }
 
   return (
