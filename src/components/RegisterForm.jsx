@@ -18,7 +18,6 @@ export const RegisterForm = () => {
     const password = e.target[2].value
     const file = e.target[3].files[0]
 
-    console.log(e)
 
     try {
       // 1. Creates user
