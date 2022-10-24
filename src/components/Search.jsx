@@ -13,11 +13,13 @@ export const Search = () => {
     const querySnapshot = await getDocs(q)
 
     try {
+      setUser(null)
       querySnapshot.forEach((doc) => {
         setUser(doc.data())
       })
     } catch (err) {
       setErr(true)
+      console.log("NU FORE FEL")
     }
     console.log(user)
   }
