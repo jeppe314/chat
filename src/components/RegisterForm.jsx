@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import { createUserWithEmailAndPassword } from "firebase/auth"
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"
 import { auth, db, storage } from "../firebase"
 import { doc, setDoc } from "firebase/firestore"
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
@@ -29,7 +29,27 @@ export const RegisterForm = () => {
       const storageRef = ref(storage, `${displayName + date}`)
 
       // 3. Upload image to cloud and get the images download url to use
-      await uploadBytesResumable()
+      await uploadBytesResumable(storageRef, file).then(() => {
+        getDownloadURL(storageRef).then(async (downloadURL) => {
+          try {
+            // 4. Updates profile
+            await updateProfile(res.user, {
+              displayName,
+              photoURL: downloadURL,
+            })
+
+            // 5. Creates registered user on firestore (database)
+            await setDoc(doc(db, "users", res.user.uid), {
+              uid: res.user.uid,
+              displayName,
+              email,
+              photoURL: downloadURL,
+            })
+          } catch (err) {
+            setErr(true)
+          }
+        })
+      })
 
       // const docRes = await setDoc(doc(db, "users", res.user.uid), {
       //   uid: res.user.uid,
