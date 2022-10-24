@@ -1,7 +1,7 @@
 import React from "react"
-import { LoginForm } from "../components/LoginForm"
+import { RegisterForm } from "../components/RegisterForm"
 
-export const Login = () => {
+export const Register = () => {
   return (
     <div className="loginWrapper">
       <div className="titleWrapper">
@@ -9,7 +9,7 @@ export const Login = () => {
         <h1 className="appTitle">FireChat</h1>
         <h1 className="shadow">FireChat</h1>
       </div>
-      <LoginForm />
+      <RegisterForm />
     </div>
   )
 }
