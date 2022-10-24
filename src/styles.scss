@@ -212,70 +212,66 @@ body {
         width: 24px;
         height: 24px;
         border-radius: 50%;
-        object-fit:cover;
+        object-fit: cover;
       }
 
-      .sidebarChats {
-        padding: 0;
+      input {
+        width: 100%;
+        border: none;
+        padding: 1em;
+        color: $slate;
+        background-color: rgba(27, 27, 27, 0.689);
+        // font-family: "Roboto Condensed", "Sans";
+
+        &:focus {
+          outline: none;
+        }
+      }
+      ::placeholder {
+        color: $slate;
+        opacity: 0.8;
+        font-weight: bold;
+      }
+
+      .chats {
+        display: flex;
+        flex-direction: column;
+        padding: 0.5em;
         height: 100%;
         overflow: scroll;
 
-        input {
-          width: 100%;
-          border: none;
-          padding: 1em;
-          color: $slate;
-          background-color: rgba(27, 27, 27, 0.689);
-          // font-family: "Roboto Condensed", "Sans";
-
-          &:focus {
-            outline: none;
-          }
-        }
-        ::placeholder {
-          color: $slate;
-          opacity: 0.8;
-          font-weight: bold;
-        }
-
-        .chats {
+        .user {
+          padding: 0.5em 0;
+          position: relative;
           display: flex;
-          flex-direction: column;
-          padding: 0.5em;
+          gap: 0.5em;
+          justify-content: flex-start;
+          align-items: center;
+          font-family: "Open Sans", "Sans";
 
-          .user {
-            padding: 0.5em 0;
-            position: relative;
-            display: flex;
-            gap: 0.5em;
-            justify-content: flex-start;
-            align-items: center;
-            font-family: "Open Sans", "Sans";
+          &::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            height: 1px;
+            width: 75%;
+            border-bottom: 1px solid rgba(167, 167, 167, 0.195);
+          }
 
-            &::before {
-              content: "";
-              position: absolute;
-              left: 50%;
-              transform: translateX(-50%);
-              bottom: 0;
-              height: 1px;
-              width: 75%;
-              border-bottom: 1px solid rgba(167, 167, 167, 0.195);
-            }
+          img {
+            width: 50px;
+            height: 50px;
+            filter: drop-shadow(0mm 0mm 5px rgba(0, 0, 0, 0.279));
+          }
 
-            img {
-              width: 50px;
-              height: 50px;
-              filter: drop-shadow(0mm 0mm 5px rgba(0, 0, 0, 0.279));
-            }
+          span {
+          }
 
-            span {
-            }
-
-            p {
-              opacity: 0.3;
-              font-size: 0.8em;
-            }
+          p {
+            opacity: 0.3;
+            font-size: 0.8em;
           }
         }
       }
