@@ -10,9 +10,7 @@ export const LoginForm = () => {
         <button type="submit" className="btn login">
           Sign in
         </button>
-        <Link to="/register">
-          <p>Haven't signed up?</p>
-        </Link>
+        <Link to="/register">Haven't signed up?</Link>
       </form>
     </div>
   )

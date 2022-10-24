@@ -16,11 +16,7 @@ export const RegisterForm = () => {
       <button className="btn registerBtn">Sign up</button>
       {/* {err && <p>Something went wrong</p>} */}
 
-      <Link to="/login">
-        <p>Already signed up?</p>
-      </Link>
+      <Link to="/login">Already signed up?</Link>
     </form>
   )
 }
-
-// ;<Link to="/login">Login</Link>
