@@ -9,7 +9,10 @@ export const User = () => {
       />
       <div>
         <span>Daniel</span>
-        <p>Morjens hej köper du ost till korven?</p>
+        <p>
+          Morjens hej köper du ost till korven?Morjens hej köper du ost till korven?Morjens hej
+          köper du ost till korven?
+        </p>
       </div>
     </div>
   )
