@@ -15,7 +15,9 @@ export const SidebarNav = () => {
           alt=""
         />
         <span>Jesper</span>
-        <button onClick={() => signOut(auth)}>Logout</button>
+        <button className="logoutBtn" onClick={() => signOut(auth)}>
+          Logout
+        </button>
       </div>
     </div>
   )
