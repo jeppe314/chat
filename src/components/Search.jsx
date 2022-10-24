@@ -13,7 +13,9 @@ export const Search = () => {
     const querySnapshot = await getDocs(q)
 
     try {
+      //THIS MIGHT CAUSE BUG?
       setUser(null)
+      //CHECK BUG
       querySnapshot.forEach((doc) => {
         setUser(doc.data())
       })
