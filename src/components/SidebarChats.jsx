@@ -1,11 +1,19 @@
 import React from "react"
+import { User } from "./User"
 
 export const SidebarChats = () => {
   return (
     <div className="sidebarChats">
-        <input type="text" placeholder="Search user..."></input>
+      <input type="text" placeholder="Search user..."></input>
       <div className="chats">
-        Chats here
+        <User />
+        <User />
+        <User />
+        <User />
+        <User />
+        <User />
+        <User />
+        <User />
       </div>
     </div>
   )
