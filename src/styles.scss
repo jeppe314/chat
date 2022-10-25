@@ -36,7 +36,8 @@ body {
 .appContainer {
   width: 100vw;
   height: 100vh;
-  background: $grayBase;
+  background-color: $grayBase;
+  background:linear-gradient(20deg, rgb(0, 0, 0) 20%, rgb(35, 34, 37) 68%);
   display: flex;
   justify-content: center;
   align-items: center;

@@ -13,9 +13,6 @@ export const Search = () => {
     const querySnapshot = await getDocs(q)
 
     try {
-      //THIS MIGHT CAUSE BUG?
-      setUser(null)
-      //CHECK BUG
       querySnapshot.forEach((doc) => {
         setUser(doc.data())
       })
@@ -33,7 +30,15 @@ export const Search = () => {
 
   return (
     <div className="search">
-      <input type="text" onChange={handleChange} placeholder="Search user..."></input>
+      <input type="text" onKeyDown={handleChange} placeholder="Search user..."></input>
+      {user && (
+        <div className="userFound">
+          <img src={user.photoURL} alt="" />
+          <div className="userChatInfo">
+            <span>{user.displayName}</span>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
