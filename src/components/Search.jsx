@@ -22,9 +22,7 @@ export const Search = () => {
       })
     } catch (err) {
       setErr(true)
-      console.log("NU FORE FEL")
     }
-    console.log(user)
   }
 
   return (
@@ -35,6 +33,7 @@ export const Search = () => {
         onKeyDown={handleKey}
         placeholder="Search user..."
       ></input>
+      {err && <span>Something went wrong</span>}
       {user && (
         <div className="userFound">
           <img src={user.photoURL} alt="" />
