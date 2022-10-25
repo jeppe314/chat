@@ -7,6 +7,10 @@ export const Search = () => {
   const [user, setUser] = useState(null)
   const [err, setErr] = useState(false)
 
+  const handleKey = (e) => {
+    e.code === "Enter" && handleSearch()
+  }
+
   const handleSearch = async () => {
     const usersRef = collection(db, "users")
     const q = query(usersRef, where("displayName", "==", username))
@@ -23,14 +27,14 @@ export const Search = () => {
     console.log(user)
   }
 
-  const handleChange = (e) => {
-    setUsername(e.target.value)
-    handleSearch()
-  }
-
   return (
     <div className="search">
-      <input type="text" onKeyDown={handleChange} placeholder="Search user..."></input>
+      <input
+        type="text"
+        onChange={(e) => setUsername(e.target.value)}
+        onKeyDown={handleKey}
+        placeholder="Search user..."
+      ></input>
       {user && (
         <div className="userFound">
           <img src={user.photoURL} alt="" />
