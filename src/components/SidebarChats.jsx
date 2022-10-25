@@ -21,23 +21,22 @@ export const SidebarChats = () => {
         unsub()
       }
     }
+
     //call function above only if there is a current user (otherwise it crashes)
     currentUser.uid && getChats()
   }, [currentUser.uid])
 
   console.log(chats)
-  return (
-    <div className="chats">
-      <User />
-      <User />
-      <User />
-      <User />
-      <User />
-      <User />
-      <User />
-      <User />
-      <User />
-      <User />
-    </div>
-  )
+
+  const chatsElement = Object.entries(chats)?.map((chat) => {
+    return (
+      <User
+        key={chat[0]}
+        photoURL={chat[1].userInfo.photoURL}
+        displayName={chat[1].userInfo.displayName}
+      />
+    )
+  })
+
+  return <div className="chats">{chatsElement}</div>
 }
