@@ -218,6 +218,7 @@ body {
         padding: 1em;
         align-items: center;
         gap: 0.5em;
+        transition: all 0.5s;
         background: $fireRedLow;
         cursor: pointer;
         span {
@@ -264,19 +265,24 @@ body {
       .chats {
         display: flex;
         flex-direction: column;
-        padding: 0.5em;
         height: 100%;
         overflow: scroll;
 
         .user {
-          padding: 0.5em 0;
+          padding: 0.5em;
           position: relative;
+          background-color: transparent;
           display: flex;
           gap: 0.5em;
           justify-content: flex-start;
           align-items: center;
           font-family: "Open Sans", "Sans";
+          transition: all 0.5s;
+
           cursor: pointer;
+          &:hover {
+            background-color: $fireRedLow;
+          }
 
           .userImg {
             width: 50px;
@@ -349,8 +355,16 @@ body {
 
         .sendBtn {
           border: none;
-          background-color: firebrick;
+          background-color: $fireRed;
+          color: $slate;
+          font-weight: bold;
+          font-size: 1.3em;
           padding: 1em;
+          transition: all 0.3s;
+          cursor: pointer;
+          &:hover {
+            background-color: $fireRedDark;
+          }
         }
       }
 
