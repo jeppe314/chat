@@ -21,6 +21,8 @@ $grayLight: rgb(40, 39, 43);
 $grayLighter: rgb(48, 47, 52);
 $slate: rgb(230, 221, 221);
 $fireRed: rgb(105, 12, 12);
+$fireRedDark: rgb(81, 9, 9);
+$fireRedLow: rgb(105, 12, 12, 0.2);
 
 * {
   margin: 0;
@@ -37,7 +39,7 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: $grayBase;
-  background:linear-gradient(20deg, rgb(0, 0, 0) 20%, rgb(35, 34, 37) 68%);
+  background: linear-gradient(20deg, rgb(0, 0, 0) 20%, rgb(35, 34, 37) 68%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -201,12 +203,36 @@ body {
           font-family: "Poppins", "Sans";
           cursor: pointer;
         }
+
+        .sidebarNavRight {
+          display: flex;
+          align-items: center;
+          gap: 1em;
+        }
       }
 
-      .sidebarNavRight {
+      .userFound {
+        font-family: "Open Sans", sans-serif;
         display: flex;
+        padding: 1em;
         align-items: center;
-        gap: 1em;
+        gap: 0.5em;
+        background: $fireRedLow;
+        cursor: pointer;
+        span {
+          text-transform: capitalize;
+        }
+        img {
+          width: 40px;
+          height: 40px;
+        }
+        p {
+          font-size: 0.8em;
+          opacity: 0.3;
+        }
+        &:hover {
+          background-color:$fireRedDark;
+        }
       }
 
       img {
@@ -249,6 +275,7 @@ body {
           justify-content: flex-start;
           align-items: center;
           font-family: "Open Sans", "Sans";
+          cursor: pointer;
 
           &::before {
             content: "";
