@@ -74,7 +74,9 @@ export const Search = () => {
       console.log("Cant find chat between users")
     }
 
-    //create userchats
+    //removes search result after clicking on it
+    setUser(null)
+    setUsername("")
   }
 
   return (
@@ -82,6 +84,7 @@ export const Search = () => {
       <input
         type="text"
         onChange={(e) => setUsername(e.target.value)}
+        value={username}
         onKeyDown={handleKey}
         placeholder="Search user..."
       ></input>
