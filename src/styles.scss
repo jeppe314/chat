@@ -175,6 +175,7 @@ body {
       overflow: hidden;
 
       .sidebarNav {
+        min-height: 75px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -318,11 +319,16 @@ body {
       flex-direction: column;
 
       .chatHeader {
+        display: grid;
+        align-content: center;
         padding: 1em;
         text-align: center;
-        // box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px;
+        min-height: 75px;
 
-        // border-bottom: 2px solid $slate;
+        span {
+          color: $fireRed;
+          text-transform: capitalize;
+        }
       }
 
       .messageInput {

@@ -1,8 +1,7 @@
 import React from "react"
-
-export const User = ({ photoURL, displayName }) => {
+export const User = ({ photoURL, displayName, handleClick }) => {
   return (
-    <div className="user">
+    <div className="user" onClick={handleClick}>
       <div className="userImg">
         <img src={photoURL} alt="" />
       </div>

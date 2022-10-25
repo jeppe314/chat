@@ -3,11 +3,12 @@ import { User } from "./User"
 import { AuthContext } from "../context/AuthContext"
 import { db } from "../firebase"
 import { doc, getDoc, onSnapshot } from "firebase/firestore"
+import { ChatContext } from "../context/ChatContext"
 
 export const SidebarChats = () => {
-  const { currentUser } = useContext(AuthContext)
-
   const [chats, setChats] = useState([])
+  const { currentUser } = useContext(AuthContext)
+  const { dispatch } = useContext(ChatContext)
 
   useEffect(() => {
     //gets the current users chats from db
@@ -26,7 +27,9 @@ export const SidebarChats = () => {
     currentUser.uid && getChats()
   }, [currentUser.uid])
 
-  console.log(chats)
+  const handleSelect = (u) => {
+    dispatch({ type: "CHANGE_USER", payload: u })
+  }
 
   const chatsElement = Object.entries(chats)?.map((chat) => {
     return (
@@ -34,6 +37,7 @@ export const SidebarChats = () => {
         key={chat[0]}
         photoURL={chat[1].userInfo.photoURL}
         displayName={chat[1].userInfo.displayName}
+        handleClick={() => handleSelect(chat[1].userInfo)}
       />
     )
   })
