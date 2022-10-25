@@ -197,10 +197,16 @@ body {
         }
 
         .logoutBtn {
-          border: none;
-          background: transparent;
+          // border: 2px solid white;
+          border-radius: 50%;
+          background-color: $fireRedDark;
+          filter: drop-shadow(0mm 0mm 5px rgba(0, 0, 0, 0.279));
+          padding: 0.3em;
+          // background: transparent;
           color: white;
           font-size: 1em;
+          width: 24px;
+          height: 24px;
           font-family: "Poppins", "Sans";
           cursor: pointer;
         }
@@ -209,6 +215,9 @@ body {
           display: flex;
           align-items: center;
           gap: 1em;
+          span {
+            text-transform: capitalize;
+          }
         }
       }
 
@@ -334,6 +343,10 @@ body {
         span {
           color: $fireRed;
           text-transform: capitalize;
+        }
+
+        h2 {
+          color: $fireRed;
         }
       }
 

@@ -3,6 +3,7 @@ import { ImFire } from "react-icons/im"
 import { signOut } from "firebase/auth"
 import { auth } from "../firebase"
 import { AuthContext } from "../context/AuthContext"
+import { ImPowerCord } from "react-icons/im"
 
 export const SidebarNav = () => {
   const { currentUser } = useContext(AuthContext)
@@ -15,11 +16,11 @@ export const SidebarNav = () => {
         <ImFire className="fireLogo" />
       </div>
       <div className="sidebarNavRight">
-        <img src={photoURL} alt="" />
         <span>{displayName}</span>
-        <button className="logoutBtn" onClick={() => signOut(auth)}>
-          Logout
-        </button>
+        {/* <button className="logoutBtn"> */}
+        {/* </button> */}
+        <img src={photoURL} alt="" />
+        <ImPowerCord className="logoutBtn" title="Logout" onClick={() => signOut(auth)} />
       </div>
     </div>
   )
