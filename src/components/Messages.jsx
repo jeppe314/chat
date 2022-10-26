@@ -7,7 +7,7 @@ export const Messages = () => {
 
   return (
     <div className="messages">
-      <Message message="morjens chifu" />
+      <Message message="morjens morjens chifumorjens chifumorjens chifumorjens chifumorjens chifumorjens chifumorjens chifumorjens chifumorjens chifumorjens chifumorjens chifumorjens chifu" />
       <Message />
       <Message />
     </div>
