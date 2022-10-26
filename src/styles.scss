@@ -187,13 +187,6 @@ body {
         .sidebarNavLogo {
           display: flex;
           align-content: center;
-
-          .fireLogo {
-            width: 30px;
-            height: 30px;
-            fill: $fireRed;
-            filter: drop-shadow(0 0px 5px rgba(0, 0, 0, 0.664));
-          }
         }
 
         .logoutBtn {
@@ -334,19 +327,28 @@ body {
       flex-direction: column;
 
       .chatHeader {
-        display: grid;
-        align-content: center;
+        display: flex;
+        justify-content: center;
+        gap:1em;
+        align-items: center;
         padding: 1em;
         text-align: center;
         min-height: 75px;
 
+        .fireLogo {
+          width: 30px;
+          height: 30px;
+          fill: $fireRed;
+          filter: drop-shadow(0 0px 5px rgba(0, 0, 0, 0.664));
+        }
+
         span {
-          color: $fireRed;
+          // color: $fireRed;
           text-transform: capitalize;
         }
 
         h2 {
-          color: $fireRed;
+          // color: $fireRed;
         }
       }
 

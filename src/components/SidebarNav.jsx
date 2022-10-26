@@ -12,9 +12,9 @@ export const SidebarNav = () => {
 
   return (
     <div className="sidebarNav">
-      <div className="sidebarNavLogo">
+      {/* <div className="sidebarNavLogo">
         <ImFire className="fireLogo" />
-      </div>
+      </div> */}
       <div className="sidebarNavRight">
         <span>{displayName}</span>
         {/* <button className="logoutBtn"> */}
