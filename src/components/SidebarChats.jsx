@@ -38,6 +38,7 @@ export const SidebarChats = () => {
         photoURL={chat[1].userInfo.photoURL}
         displayName={chat[1].userInfo.displayName}
         handleClick={() => handleSelect(chat[1].userInfo)}
+        latestMessage={chat[1].lastMessage?.text}
       />
     )
   })
