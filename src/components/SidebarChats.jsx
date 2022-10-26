@@ -32,7 +32,7 @@ export const SidebarChats = () => {
   }
 
   const chatsElement = Object.entries(chats)
-    ?.sort((a, b) => a[1].date - b[1].date)
+    ?.sort((a, b) => b[1].date - a[1].date)
     .map((chat) => {
       return (
         <User

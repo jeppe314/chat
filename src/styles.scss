@@ -379,11 +379,17 @@ body {
       }
 
       .messages {
+        display:flex;
+        flex-direction: column;
         height: 100%;
         overflow: scroll;
         font-size: 0.8em;
         padding: 1em;
         box-shadow: rgba(0, 0, 0, 0.527) 0px 2px 30px -10px inset;
+
+        .bottomRef {
+
+        }
       }
 
       .message {

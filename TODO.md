@@ -14,3 +14,5 @@ gradient for login and register page: linear-gradient(20deg, rgb(0, 0, 0) 20%, r
 Try also radial gradient with center (lighter) on title?
 
 TODO in future: Implement Algolia for better search function
+
+Show earlier messages button top of chat
