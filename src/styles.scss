@@ -379,7 +379,7 @@ body {
       }
 
       .messages {
-        display:flex;
+        display: flex;
         flex-direction: column;
         height: 100%;
         overflow: scroll;
@@ -388,32 +388,33 @@ body {
         box-shadow: rgba(0, 0, 0, 0.527) 0px 2px 30px -10px inset;
 
         .bottomRef {
-
         }
+      }
+
+      .owner {
+        flex-direction: row-reverse;
       }
 
       .message {
         display: flex;
-        align-items: flex-end;
         gap: 0.5em;
         padding: 0.5em 0;
 
         img {
-          width: 40px;
-          height: 40px;
+          width: 30px;
+          height: 30px;
           border-radius: 50%;
           filter: drop-shadow(0mm 0mm 5px rgba(0, 0, 0, 0.279));
         }
 
         .speechBubble {
-          margin-bottom: 2em;
-          border: 2px solid $slate;
-          background-color: white;
-          color: black;
+          // margin-bottom: 2em;
+          font-size:1em;
+          color: $slate;
           padding: 0.5em;
           max-width: 80%;
-
-          border-radius: 30px 30px 30px 0px;
+          background-color: $grayBase;
+          border-radius:5px;
         }
       }
     }

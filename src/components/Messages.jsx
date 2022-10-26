@@ -6,7 +6,7 @@ import { db } from "../firebase"
 export const Messages = () => {
   const { data } = useContext(ChatContext)
   const [messages, setMessages] = useState([])
-  const [visibleMessages, setVisibleMessages] = useState(-5)
+  const [visibleMessages, setVisibleMessages] = useState(-25)
   const bottomRef = useRef()
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export const Messages = () => {
   }, [data.chatId])
 
   const messagesEl = messages.slice(visibleMessages).map((m) => {
-    return <Message message={m.text} key={m.id} />
+    return <Message message={m} key={m.id} photoURL />
   })
 
   return (
