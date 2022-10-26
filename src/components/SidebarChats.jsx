@@ -31,17 +31,19 @@ export const SidebarChats = () => {
     dispatch({ type: "CHANGE_USER", payload: u })
   }
 
-  const chatsElement = Object.entries(chats)?.map((chat) => {
-    return (
-      <User
-        key={chat[0]}
-        photoURL={chat[1].userInfo.photoURL}
-        displayName={chat[1].userInfo.displayName}
-        handleClick={() => handleSelect(chat[1].userInfo)}
-        latestMessage={chat[1].lastMessage?.text}
-      />
-    )
-  })
+  const chatsElement = Object.entries(chats)
+    ?.sort((a, b) => a[1].date - b[1].date)
+    .map((chat) => {
+      return (
+        <User
+          key={chat[0]}
+          photoURL={chat[1].userInfo.photoURL}
+          displayName={chat[1].userInfo.displayName}
+          handleClick={() => handleSelect(chat[1].userInfo)}
+          latestMessage={chat[1].lastMessage?.text}
+        />
+      )
+    })
 
   return <div className="chats">{chatsElement}</div>
 }
