@@ -17,15 +17,9 @@ export const Messages = () => {
     }
   }, [data.chatId])
 
-  // const messagesEl = messages.map((m) => {
-  //   return <Message message={m} key={m.id} />
-  // })
+  const messagesEl = messages.map((m) => {
+    return <Message message={m.text} key={m.id} />
+  })
 
-  return (
-    <div className="messages">
-      {messages.map((m) => (
-        <Message message={m.text} key={m.id} />
-      ))}
-    </div>
-  )
+  return <div className="messages">{messagesEl}</div>
 }
