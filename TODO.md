@@ -18,3 +18,5 @@ TODO in future: Implement Algolia for better search function
 Show earlier messages button top of chat
 
 Open chat on searched user immediately so u dont have to click twice
+
+BUG: white screen after new registration, sidebarChats breaks
