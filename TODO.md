@@ -20,3 +20,5 @@ Show earlier messages button top of chat
 Open chat on searched user immediately so u dont have to click twice
 
 BUG: white screen after new registration, sidebarChats breaks
+
+Move sidebar to inside chat component, makes it easier to animate hamburger menu
