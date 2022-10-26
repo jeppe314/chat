@@ -177,6 +177,7 @@ body {
       .sidebarNav {
         min-height: 75px;
         display: flex;
+        width: 100%;
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
@@ -184,9 +185,12 @@ body {
         // border-bottom: 2px solid $slate;
         font-size: 0.8em;
 
-        .sidebarNavLogo {
+        .profile {
           display: flex;
-          align-content: center;
+          justify-content: center;
+          align-items: center;
+          gap:1em;
+          text-transform: capitalize;
         }
 
         .logoutBtn {
@@ -202,15 +206,6 @@ body {
           height: 24px;
           font-family: "Poppins", "Sans";
           cursor: pointer;
-        }
-
-        .sidebarNavRight {
-          display: flex;
-          align-items: center;
-          gap: 1em;
-          span {
-            text-transform: capitalize;
-          }
         }
       }
 
@@ -329,7 +324,7 @@ body {
       .chatHeader {
         display: flex;
         justify-content: center;
-        gap:1em;
+        gap: 1em;
         align-items: center;
         padding: 1em;
         text-align: center;

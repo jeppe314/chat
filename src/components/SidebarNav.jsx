@@ -12,16 +12,11 @@ export const SidebarNav = () => {
 
   return (
     <div className="sidebarNav">
-      {/* <div className="sidebarNavLogo">
-        <ImFire className="fireLogo" />
-      </div> */}
-      <div className="sidebarNavRight">
-        <span>{displayName}</span>
-        {/* <button className="logoutBtn"> */}
-        {/* </button> */}
-        <img src={photoURL} alt="" />
+        <div className="profile">
+          <img src={photoURL} alt="" />
+          <span>{displayName}</span>
+        </div>
         <ImPowerCord className="logoutBtn" title="Logout" onClick={() => signOut(auth)} />
-      </div>
     </div>
   )
 }
