@@ -378,7 +378,7 @@ body {
         }
       }
 
-      .convo {
+      .messages {
         height: 100%;
         overflow: scroll;
         font-size: 0.8em;
@@ -401,10 +401,11 @@ body {
         }
 
         .speechBubble {
+          margin-bottom: 2em;
           border: 2px solid $slate;
           background-color: white;
           color: black;
-          padding: 1em;
+          padding: .5em;
           border-radius: 30px 30px 30px 0px;
         }
       }
