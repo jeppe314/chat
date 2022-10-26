@@ -22,6 +22,10 @@ export const ChatContextProvider = ({ children }) => {
               ? currentUser.uid + action.payload.uid
               : action.payload.uid + currentUser.uid,
         }
+      // case "SEND_MESSAGE":
+      //   return {
+      //     ...state,
+      //   }
       default:
         return state
     }
