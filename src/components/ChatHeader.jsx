@@ -1,9 +1,11 @@
 import React from "react"
 import { ImFire } from "react-icons/im"
+import { GiHamburgerMenu } from "react-icons/gi"
 
 export const ChatHeader = ({ data }) => {
   return (
     <div className="chatHeader">
+      <GiHamburgerMenu className="hamburger" />
       <ImFire className="fireLogo" />
       {data.user.displayName ? (
         <h3>
