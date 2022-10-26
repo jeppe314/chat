@@ -7,12 +7,10 @@ export const Messages = () => {
   const { data } = useContext(ChatContext)
   const [messages, setMessages] = useState([])
   const [visibleMessages, setVisibleMessages] = useState(-25)
-  const bottomRef = useRef()
 
   useEffect(() => {
     const unsub = onSnapshot(doc(db, "chats", data.chatId), (doc) => {
       doc.exists() && setMessages(doc.data().messages)
-      bottomRef.current.scrollIntoView({ alignToTop: true })
     })
 
     return () => {
@@ -27,7 +25,7 @@ export const Messages = () => {
   return (
     <div className="messages">
       {messagesEl}
-      <div ref={bottomRef} className="bottomRef" />
+      <div className="bottomRef" />
     </div>
   )
 }

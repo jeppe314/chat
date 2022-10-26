@@ -7,8 +7,9 @@ export const User = ({ photoURL, displayName, handleClick, latestMessage }) => {
       </div>
       <div>
         <span>{displayName}</span>
-        <p>{latestMessage}</p>
+        <p className="trunc-2">{latestMessage}</p>
       </div>
+      <hr />
     </div>
   )
 }
