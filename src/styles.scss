@@ -176,25 +176,20 @@ body {
     }
 
     .showMenu {
-      // transform: translateX(0) !important;
-      // display: flex !important;
       opacity: 1 !important;
-      // transition: all 1s;
     }
 
     .sidebar {
-      // display: none;
       opacity: 0;
       height: 100%;
       position: absolute;
       background-color: $grayBase;
-      // transform: translateX(-100%);
       flex-direction: column;
       flex: 1;
       border-right: 1px solid rgba(111, 111, 111, 0.411);
       max-height: 100%;
       overflow: hidden;
-      transition: all 1s;
+      transition: all 0.5s;
 
       @include breakpoint(medium) {
         position: static;
@@ -453,10 +448,9 @@ body {
           height: 30px;
           border-radius: 50%;
           object-fit: cover;
-          display: none;
-          filter: drop-shadow(0mm 0mm 5px rgba(0, 0, 0, 0.279));
+          filter: none;
           @include breakpoint(medium) {
-            display: block;
+            filter: drop-shadow(0mm 0mm 5px rgba(0, 0, 0, 0.279));
           }
         }
 
