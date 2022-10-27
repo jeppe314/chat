@@ -1,13 +1,14 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Sidebar } from "../components/Sidebar"
 import { Chat } from "../components/Chat"
 import { Link } from "react-router-dom"
-import { LoadingScreen } from "../components/LoadingScreen"
+import { AuthContext } from "../context/AuthContext"
+
 export const Home = () => {
+  
   return (
-      <LoadingScreen />
-    // <div className="homeWrapper">
-    //   <Chat />
-    // </div>
+    <div className="homeWrapper">
+      <Chat />
+    </div>
   )
 }
