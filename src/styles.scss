@@ -175,13 +175,31 @@ body {
       flex-direction: column;
     }
 
+    .showMenu {
+      // transform: translateX(0) !important;
+      // display: flex !important;
+      opacity: 1 !important;
+      // transition: all 1s;
+    }
+
     .sidebar {
-      display: flex;
+      // display: none;
+      opacity: 0;
+      height: 100%;
+      position: absolute;
+      background-color: $grayBase;
+      // transform: translateX(-100%);
       flex-direction: column;
       flex: 1;
       border-right: 1px solid rgba(111, 111, 111, 0.411);
       max-height: 100%;
       overflow: hidden;
+      transition: all 1s;
+
+      @include breakpoint(medium) {
+        position: static;
+        opacity: 1;
+      }
 
       .sidebarNav {
         min-height: 75px;
@@ -252,6 +270,7 @@ body {
 
       input {
         width: 100%;
+        height: 50px;
         border: none;
         padding: 1em;
         color: $slate;
@@ -271,11 +290,14 @@ body {
       .chats {
         display: flex;
         flex-direction: column;
-        height: 100%;
+        height: calc(100% - 75px - 50px);
         overflow: scroll;
+        @include breakpoint(medium) {
+          // height: initial;
+        }
 
         .user {
-          padding: 0.5em;
+          padding: 1em;
           position: relative;
           background-color: transparent;
           display: flex;
@@ -346,6 +368,12 @@ body {
         text-align: center;
         min-height: 75px;
 
+        .hamburger-react {
+          @include breakpoint(medium) {
+            display: none;
+          }
+        }
+
         .fireLogo {
           width: 30px;
           height: 30px;
@@ -364,8 +392,10 @@ body {
       }
 
       .content {
+        position: relative;
         display: flex;
         height: 100%;
+        max-height: calc(100% - 75px);
       }
 
       .messageInput {
@@ -407,9 +437,6 @@ body {
         font-size: 0.8em;
         padding: 1em;
         box-shadow: rgba(0, 0, 0, 0.527) 0px 2px 30px -10px inset;
-
-        .bottomRef {
-        }
       }
 
       .owner {
@@ -426,7 +453,11 @@ body {
           height: 30px;
           border-radius: 50%;
           object-fit: cover;
+          display: none;
           filter: drop-shadow(0mm 0mm 5px rgba(0, 0, 0, 0.279));
+          @include breakpoint(medium) {
+            display: block;
+          }
         }
 
         .speechBubble {

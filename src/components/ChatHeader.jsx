@@ -1,14 +1,14 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 import { ImFire } from "react-icons/im"
-import { GiHamburgerMenu } from "react-icons/gi"
 import Hamburger from "hamburger-react"
+import { MenuContext } from "../context/MenuContext"
 
 export const ChatHeader = ({ data }) => {
-  const [isOpen, setOpen] = useState(false)
+  const { isOpen, setOpen } = useContext(MenuContext)
 
   return (
     <div className="chatHeader">
-      <Hamburger toggled={isOpen} toggle={setOpen} />
+      <Hamburger toggled={isOpen} toggle={() => setOpen(!isOpen)} />
       <ImFire className="fireLogo" />
       {data.user.displayName ? (
         <h3>
