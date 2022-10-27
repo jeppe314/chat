@@ -10,7 +10,7 @@ export const MessageInput = () => {
   const { data } = useContext(ChatContext)
   const { currentUser } = useContext(AuthContext)
 
-  const [text, setText] = useState()
+  const [text, setText] = useState("")
   const messagesRef = doc(db, "chats", data.chatId)
 
   const handleKey = (e) => {
@@ -40,7 +40,6 @@ export const MessageInput = () => {
       },
       [data.chatId + ".date"]: serverTimestamp(),
     })
-
     setText("")
   }
 
