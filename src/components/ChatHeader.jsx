@@ -1,11 +1,14 @@
-import React from "react"
+import React, { useState } from "react"
 import { ImFire } from "react-icons/im"
 import { GiHamburgerMenu } from "react-icons/gi"
+import Hamburger from "hamburger-react"
 
 export const ChatHeader = ({ data }) => {
+  const [isOpen, setOpen] = useState(false)
+
   return (
     <div className="chatHeader">
-      <GiHamburgerMenu className="hamburger" />
+      <Hamburger toggled={isOpen} toggle={setOpen} />
       <ImFire className="fireLogo" />
       {data.user.displayName ? (
         <h3>

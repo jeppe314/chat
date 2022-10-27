@@ -6,9 +6,9 @@ import { Search } from "./Search"
 export const Sidebar = () => {
   return (
     <div className="sidebar">
-      <SidebarNav />
       <Search />
       <SidebarChats />
+      <SidebarNav />
     </div>
   )
 }
