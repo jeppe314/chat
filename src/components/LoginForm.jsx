@@ -5,6 +5,7 @@ import { auth } from "../firebase"
 
 export const LoginForm = () => {
   const [err, setErr] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const navigate = useNavigate()
 
@@ -19,6 +20,7 @@ export const LoginForm = () => {
     } catch (err) {
       setErr(true)
     }
+    setLoading(true)
     navigate("/")
   }
 

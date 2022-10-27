@@ -44,6 +44,25 @@ body {
   justify-content: center;
   align-items: center;
 
+  .loadingLogo {
+    color: $fireRed;
+    width: 50px;
+    height: 50px;
+    animation: pulse 2s infinite;
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  }
+
   .loginWrapper {
     height: 60%;
     padding: 2em;
@@ -63,11 +82,6 @@ body {
         z-index: 5;
         position: absolute;
         font-size: 5em;
-        // background-image: src(
-        //   "https://t3.ftcdn.net/jpg/02/98/10/14/360_F_298101413_P0irRtbi9Qr084cQb0YgSmisY7cI5IPL.jpg"
-        // );
-        // clip-path: text;
-        // -webkit-text-fill-color: transparent;
         color: transparent;
         background-size: 100%;
         background: url("https://t3.ftcdn.net/jpg/01/24/17/42/240_F_124174200_aC64Gl0Njz75sgGuotbFaZgQLliv3V1T.jpg")
@@ -165,9 +179,6 @@ body {
       width: 65%;
     }
 
-    .active {
-    }
-
     .chatWrapper {
       flex: 2;
       height: 100%;
@@ -204,7 +215,6 @@ body {
         align-items: center;
         flex-wrap: wrap;
         padding: 1em;
-        // border-bottom: 2px solid $slate;
         font-size: 0.8em;
 
         .profile {
@@ -318,17 +328,6 @@ body {
             width: 50px;
             height: 50px;
           }
-
-          // &::before {
-          //   content: "";
-          //   position: absolute;
-          //   left: 50%;
-          //   transform: translateX(-50%);
-          //   bottom: 0;
-          //   height: 1px;
-          //   width: 50%;
-          //   border-bottom: 1px solid rgba(167, 167, 167, 0.05);
-          // }
 
           img {
             width: 50px;
