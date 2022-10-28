@@ -5,19 +5,21 @@ import { auth, db, storage } from "../firebase"
 import { doc, setDoc } from "firebase/firestore"
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
 import { MdFace } from "react-icons/md"
+import { AuthContext } from "../context/AuthContext"
 
 export const RegisterForm = () => {
+  const { loading, setLoading } = useContext(AuthContext)
   const [err, setErr] = useState(false)
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    setLoading(true)
 
     const displayName = e.target[0].value
     const email = e.target[1].value
     const password = e.target[2].value
     const file = e.target[3].files[0]
-
 
     try {
       // 1. Creates user
@@ -57,6 +59,7 @@ export const RegisterForm = () => {
       setErr(true)
       console.log("Error in registration")
     }
+    setLoading(false)
     navigate("/")
   }
 
