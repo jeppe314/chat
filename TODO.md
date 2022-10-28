@@ -22,3 +22,9 @@ Open chat on searched user immediately so u dont have to click twice
 BUG: white screen after new registration, sidebarChats breaks
 
 Move sidebar to inside chat component, makes it easier to animate hamburger menu
+
+Make not able to zoom in mobile ? Not sure if possible since web
+
+Small divs ? or sth next to users in sidebar in mobile wtf
+
+Fix viewport height thingy in mobile
