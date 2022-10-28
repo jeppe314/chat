@@ -30,6 +30,15 @@ $fireRedLow: rgb(105, 12, 12, 0.2);
   box-sizing: border-box;
 }
 
+html {
+  height: -webkit-fill-available;
+}
+
+#root {
+  height: 100vh;
+  height: -webkit-fill-available;
+}
+
 body {
   color: white;
   font-family: "Poppins", sans-serif;
@@ -37,9 +46,13 @@ body {
 
 .appContainer {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-color: $grayBase;
-  background: linear-gradient(20deg, rgb(0, 0, 0) 20%, rgb(35, 34, 37) 68%);
+  background: linear-gradient(
+    20deg,
+    rgb(0, 0, 0) 20%,
+    rgb(35, 34, 37) 68%
+  );
   display: flex;
   justify-content: center;
   align-items: center;
@@ -96,7 +109,12 @@ body {
         z-index: 2;
         font-size: 5em;
         color: rgb(123, 12, 12);
-        background-image: linear-gradient(to right, $fireRed, #dc5912, $fireRed);
+        background-image: linear-gradient(
+          to right,
+          $fireRed,
+          #dc5912,
+          $fireRed
+        );
         background-size: 200% auto;
         background-clip: text;
         -webkit-background-clip: text;
@@ -172,7 +190,8 @@ body {
     position: relative;
     height: 100%;
     width: 100%;
-    box-shadow: rgba(25, 24, 24, 0.2) 5px 5px 20px 0px, rgba(25, 24, 24, 0.4) 10px 10px 20px 0px,
+    box-shadow: rgba(25, 24, 24, 0.2) 5px 5px 20px 0px,
+      rgba(25, 24, 24, 0.4) 10px 10px 20px 0px,
       rgba(25, 24, 24, 0.604) 15px 15px 10px 0px;
     @include breakpoint(large) {
       height: 85%;
