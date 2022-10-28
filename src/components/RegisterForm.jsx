@@ -17,6 +17,13 @@ import { AuthContext } from "../context/AuthContext"
 export const RegisterForm = () => {
   const { loading, setLoading } = useContext(AuthContext)
   const [err, setErr] = useState(false)
+  const [inputErr, setInputErr] = useState({
+    displayName: false,
+    email: false,
+    password: false,
+    image: false,
+  })
+
   const navigate = useNavigate()
 
   const displayNameRef = useRef()
@@ -28,9 +35,25 @@ export const RegisterForm = () => {
   const password = passwordRef.current
 
   const checkInput = () => {
-    console.log(displayName.value)
-    console.log(email.value)
-    console.log(password.value)
+    if (displayName.value.length > 0 && displayName.value.length <= 3)
+      setInputErr({
+        ...inputErr,
+        displayName: true,
+      })
+    if (email.value.length > 0 && email.value.length <= 3) {
+      setInputErr({
+        ...inputErr,
+        email: true,
+      })
+    }
+    if (password.value.length > 0 && password.value.length < 6) {
+      setInputErr({
+        ...inputErr,
+        password: true,
+      })
+    }
+
+    console.log(inputErr)
   }
 
   const handleSubmit = async (e) => {
