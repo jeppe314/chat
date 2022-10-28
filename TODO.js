@@ -18,6 +18,8 @@
 
 // TODO: Error msgs on signup or login
 
+// TODO: Make reducer for error messages, better than else if statements in component I think
+
 // CHECK Move sidebar to inside chat component, makes it easier to animate hamburger menu
 
 // CHECKAdd fire animation to title
