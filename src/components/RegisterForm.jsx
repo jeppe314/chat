@@ -1,9 +1,16 @@
 import React, { useState, useContext } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"
+import {
+  createUserWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth"
 import { auth, db, storage } from "../firebase"
 import { doc, setDoc } from "firebase/firestore"
-import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
+import {
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+} from "firebase/storage"
 import { MdFace } from "react-icons/md"
 import { AuthContext } from "../context/AuthContext"
 
@@ -23,7 +30,11 @@ export const RegisterForm = () => {
 
     try {
       // 1. Creates user
-      const res = await createUserWithEmailAndPassword(auth, email, password)
+      const res = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      )
 
       // 2. Create unique name for image
       const date = new Date().getTime()
@@ -65,17 +76,33 @@ export const RegisterForm = () => {
 
   return (
     <form className="form" onSubmit={handleSubmit}>
-      <input requiredtype="text" className="username" placeholder="Username" />
-      <input required type="text" className="email" placeholder="Email" />
+      <input
+        requiredtype="text"
+        className="username"
+        placeholder="Username"
+      />
+      <input
+        required
+        type="text"
+        className="email"
+        placeholder="Email"
+      />
       <input
         required
         type="password"
-        pattern=".{8,}"
-        title="Password needs to be minumum 8 characters long"
+        pattern=".{6,}"
+        title="Password needs to be minumum 6 characters long"
         className="password"
         placeholder="Password"
       />
-      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "1em" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "1em",
+        }}
+      >
         <span>Choose avatar</span>
         <label htmlFor="fileBtn">
           <MdFace />

@@ -29,8 +29,18 @@ export const LoginForm = () => {
   return (
     <div>
       <form className="form" onSubmit={handleSubmit}>
-        <input required type="email" className="email" placeholder="Email" />
-        <input required type="password" className="password" placeholder="Password" />
+        <input
+          required
+          type="email"
+          className="email"
+          placeholder="Email"
+        />
+        <input
+          required
+          type="password"
+          className="password"
+          placeholder="Password"
+        />
         <button type="submit" className="btn login">
           Sign in
         </button>
