@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react"
+import React, { useState, useContext, useRef, useEffect } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import {
   createUserWithEmailAndPassword,
@@ -19,13 +19,26 @@ export const RegisterForm = () => {
   const [err, setErr] = useState(false)
   const navigate = useNavigate()
 
+  const displayNameRef = useRef()
+  const emailRef = useRef()
+  const passwordRef = useRef()
+
+  const displayName = displayNameRef.current
+  const email = emailRef.current
+  const password = passwordRef.current
+
+  const checkInput = () => {
+    console.log(displayName.value)
+    console.log(email.value)
+    console.log(password.value)
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)
-
-    const displayName = e.target[0].value
-    const email = e.target[1].value
-    const password = e.target[2].value
+    const displayName = displayNameRef.current
+    const email = emailRef.current
+    const password = passwordRef.current
     const file = e.target[3].files[0]
 
     try {
@@ -80,12 +93,16 @@ export const RegisterForm = () => {
         requiredtype="text"
         className="username"
         placeholder="Username"
+        onBlur={checkInput}
+        ref={displayNameRef}
       />
       <input
         required
         type="text"
         className="email"
         placeholder="Email"
+        onBlur={checkInput}
+        ref={emailRef}
       />
       <input
         required
@@ -94,6 +111,8 @@ export const RegisterForm = () => {
         title="Password needs to be minumum 6 characters long"
         className="password"
         placeholder="Password"
+        onBlur={checkInput}
+        ref={passwordRef}
       />
       <div
         style={{
